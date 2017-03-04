@@ -1,0 +1,50 @@
+Midterm next Wed.
+
+Closed book, notes, no electronic devices or phone
+
+
+Terms:
+	gcd
+	coprime
+	group of units mod n
+	Euler phi function
+	order of elements
+	least non-negative residue mod n
+	congruence
+	inverse mod negative 
+	lex order
+	public key
+	private key
+	plaintext
+	cyphertext
+	probable prime
+	sieve of ERatosthenes
+	rank of a permutation
+	Zn
+	Zn*
+
+Concept Questions:
+	1.	Be able to compute the gcd
+	2.	Be able to give the group of units mod n
+	3.	Compute phi(n)
+	4.	Compute the order of an element mod n.
+	5.	Find the inverse of an element in Zn*
+	6.	Know Fermat's Little theorem and Euler's generalization
+	7.	Know how to generate large primes. Why do we need them in RSA encryption?
+	8.	Be able to compute the multiplication table for Zn*
+	9.	How many elements are in Zn*;
+	10. Be able to give a detailed description of the RSA algorithm.
+			- Look over the code and summarize it in your mind.
+	11.	What's a simple test for memebership in Zn*?
+	12.	Describe the extremely efficient pseudo-primality test.
+	13.	Compute the rank of a permutation
+	14.	List the permutations of n things in lex order and trotter's algorithm order.
+	15.	Know your modular arithmetic.
+
+Code Snippets:
+	1.	BigInteger version of Euclid's gcd algorithm.
+	2.	A function that displays the elements of Zn*.
+	3.	Modular Exponentiation and be able to discuss its complexity.
+	4. 	Euler phi function
+	5.	The pseudoprimality test
+	6.	A function that computes the order of elements in Zn*.

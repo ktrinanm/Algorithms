@@ -1,0 +1,14 @@
+We're going to be writing an industry RSA algorithm
+
+Protocol:
+	1. Block size is 600 digits
+	2. Plaintext uses padded ascii
+		t = 116
+		A = 65
+		make them all the same length by adding 100
+		A = 165
+		t = 216
+	3. Pick 2 random primes of approx 1024 bits each such that:
+		a. The product is exactly 600 digits in length
+		b. The product n > 355355...355 
+		Then you have found a good modulus. It will be part of your public key.

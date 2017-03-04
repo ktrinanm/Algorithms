@@ -1,0 +1,5 @@
+Modular exponentiation:
+
+1234567^123456 mod 12345
+
+Slow exp is linear in the exponent.

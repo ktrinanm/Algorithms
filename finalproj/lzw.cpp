@@ -75,31 +75,14 @@ void compress(ifstream *in, ofstream *out)
 		currStr += c;
 		if(codes.find(currStr) == codes.end()) //iterator not found
 		{
-/*			if(nextCode <= MAX_CODE)
-			{
-			}
-*/
-
-			codes.insert(pair<string, const unsigned int>(currStr, nextCode++));
-//			codes[currStr] = nextCode++;
+			codes[currStr] = nextCode++;
 			currStr.erase(currStr.size()-1); // remove c
 
-			cout << currStr << ":\t";
-			unsigned int code = codes[currStr] & 0xff;
-			cout << (codes[currStr] & 0xff);
-			cout << ((codes[currStr] >> 8) & 0xff);
-//			cout.put(code);
-//			cout.put((codes[currStr] >> 8 & 0xff));
-			cout << endl;
-//				<< codes[currStr] << endl;
-			if(codes.size() > 65536)
-			{
-				cout << "The dictionary is too large!!" << endl;
-			}
+			cout << currStr << ":\t"
+				<< codes[currStr] << endl;
 			
 			(*out).put(codes[currStr] & 0xff);
 			(*out).put((codes[currStr] >> 8) & 0xff);
-//			(*out) << codes[currStr];
 			currStr = c;
 		}
 	}
@@ -109,7 +92,6 @@ void compress(ifstream *in, ofstream *out)
 		cout << currStr << ":\t" << codes[currStr] << endl;
 		(*out).put(codes[currStr] & 0xff);
 		(*out).put((codes[currStr] >> 8) & 0xff);
-//		(*out) << codes[currStr];
 	}
 }
 
@@ -129,25 +111,9 @@ void decompress(ifstream *in, ofstream *out)
 	
 	while((*in).get(c)) //dereference stream pointer
 	{
-		code = c;
+		code = (unsigned char) c;
 		(*in).get(c);
-		code |= (c & 0xff) << 8;
-//
-//		if(code > nextCode)
-//		{
-//			cout << "Error: " << nextCode << " "
-//				<< code << endl;
-//			continue;
-//		}
-//
-//		(*out) << strings[code];
-//		cout << code << ": " << strings[code] << endl;
-//		if(prevStr.size())
-//		{
-//			strings[code] = prevStr + prevStr[0];
-//		}
-//
-//		prevStr = strings[code];
+		code |= ((unsigned char)c & 0xff) << 8;
 
 		if(strings.find(code) == strings.end()) //not found
 		{
